@@ -1,6 +1,7 @@
 import { routerReducer as routing } from 'react-router-redux';
 import { combineReducers } from 'redux';
 import * as types from '../actions/types';
+import manReducer from './man';
 
 const filter = (state = '', action) => {
     switch (action.type) {
@@ -14,6 +15,7 @@ const filter = (state = '', action) => {
 
 const rootReducer = combineReducers({
     filter,
+    manReducer,
     routing
 });
 

@@ -6,3 +6,10 @@ export function filterTable(filter) {
         filter
     };
 }
+
+// Man actions
+export function step() {
+    return {
+        type: types.STEP
+    };
+}
