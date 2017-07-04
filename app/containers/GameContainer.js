@@ -1,34 +1,41 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import { step } from '../actions';
+import { guess } from '../actions';
 import Man from '../components/Man';
+import Board from '../components/Board';
 
-const GameContainer = ({ stepNumber, onNext }) => {
+const GameContainer = ({ stepNumber, currentState, onInput }) => {
+    let input;
     return (
         <div>
-            <p> hey </p>
-            <div>
-                <Man stepNumber={stepNumber} onNext={onNext}/>
-            </div>
+            <Man stepNumber={stepNumber} />
+            <Board currentState={currentState} />
+            <input type="text"
+                value={''}
+                ref={node => {input = node;}}
+                onChange={() => { onInput(input.value); alert(input.value); } }
+            />
         </div>
     );
 };
 
 GameContainer.propTypes = {
     stepNumber: PropTypes.number,
-    onNext: PropTypes.func
+    currentState: PropTypes.array,
+    onInput: PropTypes.func
 };
 
 const mapStateToProps = (state) => {
     return {
-        stepNumber: state.manReducer
+        stepNumber: state.textReducer.step,
+        currentState: state.textReducer.currentText
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onNext: () => dispatch(step())
+        onInput: (inputText) => dispatch(guess(inputText))
     };
 };
 

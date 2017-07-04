@@ -1,15 +1,16 @@
 import * as types from './types';
 
-export function filterTable(filter) {
+// Board actions
+export function start(answer) {
     return {
-        type: types.FILTER,
-        filter
+        type: types.START,
+        answer
     };
 }
 
-// Man actions
-export function step() {
+export function guess(inputText) {
     return {
-        type: types.STEP
+        type: types.GUESS,
+        inputText
     };
 }
