@@ -4,8 +4,8 @@ import GameContainer from './containers/GameContainer';
 import About from './components/About';
 
 export default (
-	<Switch>
-		<Route exact path="/" component={GameContainer} />
-		<Route path="/about" component={About} />
-	</Switch>
+    <Switch>
+        <Route exact path="/" component={GameContainer} />
+        <Route path="/about" component={About} />
+    </Switch>
 );

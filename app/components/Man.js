@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 
 const Man = ({ stepNumber }) => {
     return (
-      <div>
-        <p>{stepNumber}</p>
-        <img src={imgUrls[stepNumber]}/>
-      </div>
-  );
+        <div>
+            <p>{stepNumber}</p>
+            <img src={imgUrls[stepNumber]}/>
+        </div>
+    );
 };
 
 Man.propTypes = {

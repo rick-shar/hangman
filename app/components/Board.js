@@ -4,10 +4,10 @@ import Box from './Box';
 
 const Board = ({ currentState }) => {
     return (
-      <div style={{'display': 'flex'}}>
-        {currentState.map(letter => <Box letter={letter}/>)}
-      </div>
-  );
+        <div style={{'display': 'flex'}}>
+            {currentState.map(letter => <Box letter={letter}/>)}
+        </div>
+    );
 };
 
 Board.propTypes = {
